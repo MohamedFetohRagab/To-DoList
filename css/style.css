@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, Helvetica, sans-serif !important;
+  padding: 0;
+  margin: 0;
+  background-color: #cadcfc !important;
+}
+* {
+  box-sizing: border-box;
+}
+
+.form {
+  padding-top: 20px;
+}
+.form .input {
+  max-width: 600px;
+  display: flex;
+  flex-wrap: nowrap !important;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+h3 {
+  padding: 10px;
+  color: white !important;
+  background-color: #2195f330 !important;
+  width: fit-content;
+  margin: 1rem auto !important;
+  border-radius: 10px;
+  text-align: center;
+}
+h3 svg path {
+  fill: white;
+}
+.input [type="text"]:focus {
+  outline-color: #ccc;
+}
+
+input,
+.del {
+  border: none;
+  padding: 10px;
+}
+.tasks {
+  max-width: 600px !important;
+
+  gap: 5px;
+  padding-top: 30px;
+  transform: perspective(1000px);
+  transform-style: preserve-3d;
+}
+.task {
+  font-size: 20px;
+  padding-left: 10px;
+  background-color: #f9f9f9;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 5px 1px #00000020;
+  transition: 0.5s;
+  width: 100% !important;
+}
+.task:hover {
+  transform: translateZ(100px);
+}
+.task:hover + * {
+  transform: translateZ(40px) rotateX(-40deg);
+}
+.task:hover + * + * {
+  transform: translateZ(20px) rotateX(-20deg);
+}
+.task:has(+ *:hover) {
+  transform: translateZ(40px) rotateX(40deg);
+}
+.task:has(+ * + *:hover) {
+  transform: translateZ(20px) rotateX(20deg);
+}
+.del {
+  background-color: rgba(255, 0, 0, 0.799);
+  background-color: #2195f3bb;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
